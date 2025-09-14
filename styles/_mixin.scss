@@ -1,0 +1,29 @@
+@mixin respond($breakpoint) {
+  // Eğer breakpoint'in değeri sm ise bu 540px >
+  @if $breakpoint ==sm {
+    @media (min-width: 540px) {
+      @content;
+    }
+  }
+
+  // Eğer breakpoint'in değeri md ise bu 768px >
+  @if $breakpoint ==md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  // Eğer breakpoint'in değeri lg ise bu 824 >
+  @if $breakpoint ==lg {
+    @media (min-width: 824px) {
+      @content;
+    }
+  }
+
+  // Eğer breakpoint'in değeri xl ise bu 1024px >
+  @if $breakpoint ==xl {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}

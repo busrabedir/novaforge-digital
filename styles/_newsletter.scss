@@ -1,0 +1,35 @@
+@use "./variables";
+.newsletter_container {
+  .newsletter_content {
+    background-color: variables.$secondary-color;
+    padding: 5rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    .section_header {
+      color: variables.$white;
+      margin-bottom: 2rem;
+      max-width: 750px;
+      margin-inline: auto;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    form {
+      width: 100%;
+      max-width: 600px;
+      margin-inline: auto;
+      display: flex;
+      padding: 0.25rem;
+      background-color: variables.$white;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      input {
+        flex: 1;
+        padding-inline: 1rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}

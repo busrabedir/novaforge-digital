@@ -1,0 +1,102 @@
+@use "./variables";
+@use "./mixin";
+
+.nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  //   Header
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: variables.$primary-color;
+    max-width: variables.$max-width;
+    margin: 0 auto;
+  }
+
+  //   Logo
+  &_logo {
+    a {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: variables.$white;
+      white-space: nowrap;
+    }
+  }
+
+  //  Navigation
+  &_links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: variables.$primary-color;
+    z-index: -1;
+    transform: translateY(-100%);
+
+    a {
+      color: variables.$white;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    &.open {
+      transform: translateY(100%);
+    }
+  }
+
+  //   Button
+  &_btn {
+    display: none;
+  }
+
+  &_menu_btn {
+    background: none;
+    cursor: pointer;
+    i {
+      color: variables.$white;
+      font-size: 1.5rem;
+    }
+  }
+  //   Responsive Design
+  @include mixin.respond(md) {
+    &_header {
+      background-color: transparent;
+    }
+
+    // Logo
+    &_logo {
+      a {
+        color: variables.$secondary-color;
+      }
+    }
+
+    // Navigation
+    &_links {
+      position: static;
+      transform: translateY(0);
+      flex-direction: row;
+      background: transparent;
+
+      a {
+        color: variables.$text-light;
+      }
+    }
+  }
+
+  @include mixin.respond(lg) {
+    // Button
+    &_btn {
+      display: block;
+    }
+  }
+}
